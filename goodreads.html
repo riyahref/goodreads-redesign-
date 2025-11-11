@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Leaf Library — E-Library Management</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="goodreads.css">
+</head>
+<body>
+	<div class="page">
+		<div class="device">
+			<div class="sidebar">
+				<div class="logo">g</div>
+				<div class="nav">
+					<a class="nav-item active" title="Home">
+                        <i class="ri-home-smile-fill"></i>
+                    </a>
+					<a class="nav-item" title="My Books">
+                        <i class="ri-book-open-line"></i>
+                    </a>
+					<a class="nav-item" title="Browse">
+                        <i class="ri-folder-open-line"></i>
+                    </a>
+					<a class="nav-item" title="Community">
+                        <i class="ri-community-line"></i>
+                    </a>
+				</div>
+				<div class="sidebar-footer">
+					<a class="nav-item" title="Settings"><i class="ri-settings-3-line"></i></a>
+				</div>
+				<button class="collapse" id="collapseBtn" aria-label="Toggle sidebar"></button>
+			</div>
+
+			<div class="main">
+				<div class="topbar">
+					<div class="brand">goodreads</div>
+					<div class="search">
+						<div class="search-icon"></div>
+						<input id="searchInput" type="text" placeholder="Search books, authors, categories">
+						<button class="chip">Search</button>
+					</div>
+					<div class="userbox">
+						<a class="icon-btn" title="Notifications"><i class="ri-notification-2-line"></i></a>
+						<div class="user-avatar">
+                            <a class="avatar-icon"><i class="ri-account-circle-line"></i></a>
+                        </div>
+						<div class="user-name">Riya</div>
+					</div>
+				</div>
+
+				<div class="primary-grid">
+					<div class="current-reading">
+						<div class="current-card">
+							<div class="current-cover"></div>
+							<div class="current-info">
+								<h3>Current Reading</h3>
+								<div class="current-title">Atomic Habits</div>
+								<div class="current-meta">
+									<div class="pill-row">
+										<div class="pill-label">Ratings</div>
+										<div class="pill-value">4.36 ★</div>
+									</div>
+									<div class="pill-row">
+										<div class="pill-label">Author</div>
+										<div class="pill-value">James Clear</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="awards-panel">
+						<div class="choice-card">
+							<div class="choice-banner"></div>
+							<div class="choice-body">
+								<h3>2025 Goodreads Choice Awards</h3>
+								<div class="choice-headline">Vote on the Nominees until Nov. 23</div>
+								<div class="choice-copy">Join millions of readers voting for their favorite books of the year!</div>
+								<div class="choice-meta">418,838 votes</div>
+							</div>
+						</div>
+					</div>
+					<div class="quick-actions">
+						<button class="action-btn">Continue with Amazon</button>
+						<button class="action-btn">Continue with Apple</button>
+						<button class="action-btn">Continue with Email</button>
+					</div>
+				</div>
+
+				<div class="welcome-banner">
+					<h3><em><strong>Welcome to goodreads book library</strong></em></h3>
+				</div>
+
+				<!-- Sections -->
+				<div class="section">
+					<div class="section-head">
+						<h3>Today’s Reads</h3>
+						<div class="tabs">
+							<button class="tab active">Popular</button>
+							<button class="tab">New</button>
+							<button class="tab">For You</button>
+						</div>
+					</div>
+					<div class="card-grid">
+						<div class="book-card">
+							<div class="cover cover-1"></div>
+							<div class="book-title">I'm Glad My Mom Died</div>
+							<div class="book-meta">
+								<div class="book-rating">4.32 ★</div>
+								<div class="book-author">Jennette McCurdy</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover cover-2"></div>
+							<div class="book-title">Atomic Habits</div>
+							<div class="book-meta">
+								<div class="book-rating">4.44 ★</div>
+								<div class="book-author">James Clear</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover cover-3"></div>
+							<div class="book-title">The Alchemist</div>
+							<div class="book-meta">
+								<div class="book-rating">3.87 ★</div>
+								<div class="book-author">Paulo Coelho</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover cover-4"></div>
+							<div class="book-title">The Great Gatsby</div>
+							<div class="book-meta">
+								<div class="book-rating">3.92 ★</div>
+								<div class="book-author">F. Scott Fitzgerald</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover cover-5"></div>
+							<div class="book-title">Twilight</div>
+							<div class="book-meta">
+								<div class="book-rating">3.93 ★</div>
+								<div class="book-author">Stephenie Meyer</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover cover-6"></div>
+							<div class="book-title">Twilight</div>
+							<div class="book-meta">
+								<div class="book-rating">3.67 ★</div>
+								<div class="book-author">Stephenie Meyer</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-divider"></div>
+				</div>
+
+				<div class="section discover-layout">
+					<div class="recommendations-section">
+						<div class="section-head">
+							<h3>RECOMMENDATIONS BASED ON YOUR RECENT PICKS</h3>
+						</div>
+						<div class="recommendations-grid">
+							<div class="recommendation-card">
+								<div class="rec-cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1317793965i/11468377.jpg')"></div>
+								<div class="rec-info">
+									<div class="rec-title">Thinking, Fast and Slow</div>
+									<div class="rec-author">Daniel Kahneman</div>
+									<div class="rec-rating">4.17 ★ · 577,734 ratings · 19,203 reviews</div>
+									<div class="rec-description">In the highly anticipated <em>Thinking, Fast and Slow</em>, Kahneman takes us on a groundbreaking tour of the mind and explains the two systems that drive the way we think. System 1 is fast, intuitive, and emotional; System 2 is slower, more deliberative, and more logical. Kahneman exposes the extraordinary capabilities—and also the faults and biases—of fast thinking, and reveals the pervasive influence of intuitive impressions on our thoughts and behavior. The impact of loss aversion and overconfidence on corporate strategies, the difficulties of predicting what will make us happy in the future, the challenges of properly framing risks at work and at home—each of these can be understood only by knowing how the two systems work together to shape our judgments and decisions.</div>
+									<div class="rec-genres">
+										<span class="genre-tag">Nonfiction</span>
+										<span class="genre-tag">Psychology</span>
+										<span class="genre-tag">Self Help</span>
+										<span class="genre-tag">Science</span>
+										<span class="genre-tag">Business</span>
+										<span class="genre-tag">Economics</span>
+										<span class="genre-tag">Personal Development</span>
+									</div>
+								</div>
+							</div>
+							<div class="recommendation-card">
+								<div class="rec-cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1463241782i/30186948.jpg')"></div>
+								<div class="rec-info">
+									<div class="rec-title">Think and Grow Rich</div>
+									<div class="rec-author">Napoleon Hill, Bill Hartley, Ann Hartley</div>
+									<div class="rec-rating">4.17 ★ · 376,465 ratings · 11,733 reviews</div>
+									<div class="rec-description">Think and Grow Rich is a guide to success by Napoleon Hill, which was first published in 1937 following the Great Depression. It was immediately welcomed as an antidote to hard times and remained a bestseller for decades. Many people still find its philosophy of positive thinking and its specific steps for achieving wealth both relevant and life-changing. Hill contends that our thoughts become our reality, and offers a plan and principles for transforming thoughts into riches, including visualization, affirmation, creating a Master Mind group, defining a goal, and planning.</div>
+									<div class="rec-genres">
+										<span class="genre-tag">Self Help</span>
+										<span class="genre-tag">Business</span>
+										<span class="genre-tag">Nonfiction</span>
+										<span class="genre-tag">Finance</span>
+										<span class="genre-tag">Personal Development</span>
+										<span class="genre-tag">Money</span>
+										<span class="genre-tag">Psychology</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="top-picks-section">
+						<div class="section-head">
+							<h3>TOP PICKS OF THIS WEEK</h3>
+						</div>
+						<div class="top-picks-grid">
+							<div class="top-pick-card">
+								<div class="top-pick-cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1760993353i/44582454.jpg')"></div>
+								<div class="top-pick-rating">4.10 ★</div>
+								<div class="top-pick-genre">Romance</div>
+							</div>
+							<div class="top-pick-card">
+								<div class="top-pick-cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1761313344i/219385951.jpg')"></div>
+								<div class="top-pick-rating">3.83 ★</div>
+								<div class="top-pick-genre">Thriller</div>
+							</div>
+							<div class="top-pick-card">
+								<div class="top-pick-cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1670363463i/58416952.jpg')"></div>
+								<div class="top-pick-rating">4.60 ★</div>
+								<div class="top-pick-genre">Fantasy</div>
+							</div>
+							<div class="top-pick-card">
+								<div class="top-pick-cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1730451646i/181344829.jpg')"></div>
+								<div class="top-pick-rating">4.11 ★</div>
+								<div class="top-pick-genre">Paranormal</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section">
+					<div class="section-head">
+						<h3>NEW RELEASES</h3>
+						<a href="#" class="see-all">See all</a>
+					</div>
+					<div class="card-grid">
+						<div class="book-card">
+							<div class="cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1743882229i/224003821.jpg')"></div>
+							<div class="book-title">An Academic Affair</div>
+							<div class="book-meta">
+								<div class="book-rating">3.99 ★</div>
+								<div class="book-author">Jodi McAlister</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1734476251i/222376635.jpg')"></div>
+							<div class="book-title">Fallen City</div>
+							<div class="book-meta">
+								<div class="book-rating">3.81 ★</div>
+								<div class="book-author">Adrienne Young</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1745876622i/222376666.jpg')"></div>
+							<div class="book-title">Gemini: Stepping Stone to the Moon</div>
+							<div class="book-meta">
+								<div class="book-rating">4.45 ★</div>
+								<div class="book-author">Jeffrey Kluger</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1749072149i/223363564.jpg')"></div>
+							<div class="book-title">Her One Regret</div>
+							<div class="book-meta">
+								<div class="book-rating">3.64 ★</div>
+								<div class="book-author">Donna Freitas</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+						<div class="book-card">
+							<div class="cover" style="background-image: url('https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1744489197i/227429747.jpg')"></div>
+							<div class="book-title">Cursed Daughters</div>
+							<div class="book-meta">
+								<div class="book-rating">4.11 ★</div>
+								<div class="book-author">Oyinkan Braithwaite</div>
+							</div>
+							<div class="read-status">
+								<button class="status-btn" onclick="toggleDropdown(this)">
+									<span>Want to Read</span>
+									<i class="ri-arrow-down-s-line"></i>
+								</button>
+								<div class="status-dropdown">
+									<button class="status-option" onclick="selectStatus(this, 'Want to Read')">Want to Read</button>
+									<button class="status-option" onclick="selectStatus(this, 'Currently Reading')">Currently Reading</button>
+									<button class="status-option" onclick="selectStatus(this, 'Read')">Read</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section-divider"></div>
+				</div>
+
+				<!-- News and Interviews Section -->
+				<div class="section news-section">
+					<h2 class="news-heading">News and Interviews</h2>
+					<div class="news-layout">
+						<div class="news-left">
+							<div class="news-item" id="news2">
+								<div class="news-category">NEWS</div>
+								<div class="news-time">11h</div>
+								<h3 class="news-title">8 New Books Recommended by Readers This Week</h3>
+								<p class="news-snippet">Need another excuse to treat yourself to a new book this week? We've got you covered with the buzziest new releases of the week.</p>
+								<a href="#" class="news-read-more">Read more</a>
+								<div class="news-footer">
+									<span class="news-likes">19 likes</span>
+									<button class="news-share">Share</button>
+								</div>
+							</div>
+							<div class="news-item" id="news3">
+								<div class="news-category">NEWS</div>
+								<div class="news-time">Nov 04</div>
+								<h3 class="news-title">A Gift Guide for Very Specific Readers in Your Life</h3>
+								<p class="news-snippet">As you might expect, we are book people here at Goodreads World Headquarters—rather intense book people, in fact. We love books, we love reading, and we love talking about books.</p>
+								<a href="#" class="news-read-more">Read more</a>
+								<div class="news-footer">
+									<span class="news-likes">83 likes</span>
+									<button class="news-share">Share</button>
+								</div>
+							</div>
+						</div>
+						<div class="news-right">
+							<div class="news-item news-large" id="news1">
+								<div class="news-category">NEWS</div>
+								<div class="news-time">Nov 01</div>
+								<h3 class="news-title">Fiction and Nonfiction Reads for Native American Heritage Month</h3>
+								<p class="news-snippet">An avenging vampire hunts the bloodied steppes of 19th-century Montana. A young woman in Oklahoma embarks on a quest to become the first Native American woman to win an Olympic gold medal. A coming-of-age handbook from the first Native American Poet Laureate of the United States. These are just a few of the powerful stories featured in this month's reading recommendations.</p>
+								<a href="#" class="news-read-more">Read more</a>
+								<div class="news-footer">
+									<span class="news-likes">463 likes</span>
+									<button class="news-share">Share</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Section -->
+				<div class="footer-section">
+					<div class="footer-content">
+						<div class="footer-column">
+							<h4 class="footer-heading">COMPANY</h4>
+							<a href="#" class="footer-link">About us</a>
+							<a href="#" class="footer-link">Careers</a>
+							<a href="#" class="footer-link">Terms</a>
+							<a href="#" class="footer-link">Privacy</a>
+							<a href="#" class="footer-link">Interest Based Ads</a>
+							<a href="#" class="footer-link">Ad Preferences</a>
+							<a href="#" class="footer-link">Help</a>
+						</div>
+						<div class="footer-column">
+							<h4 class="footer-heading">WORK WITH US</h4>
+							<a href="#" class="footer-link">Authors</a>
+							<a href="#" class="footer-link">Advertise</a>
+							<a href="#" class="footer-link">Authors & ads blog</a>
+						</div>
+						<div class="footer-column">
+							<h4 class="footer-heading">CONNECT</h4>
+							<div class="footer-social">
+								<a href="#" class="social-icon" title="Facebook"><i class="ri-facebook-fill"></i></a>
+								<a href="#" class="social-icon" title="Twitter"><i class="ri-twitter-fill"></i></a>
+								<a href="#" class="social-icon" title="Instagram"><i class="ri-instagram-fill"></i></a>
+								<a href="#" class="social-icon" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="goodreads.js"></script>
+</body>
+	<!-- Built with only divs, headings, a and button + basic JS -->
+</html>
