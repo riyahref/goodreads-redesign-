@@ -290,7 +290,7 @@ body {
 .primary-grid {
 	margin-top: 22px;
 	display: grid;
-	grid-template-columns: 280px minmax(0, 1fr) 220px;
+	grid-template-columns: 300px minmax(0, 1fr) 250px;
 	gap: 18px;
 	align-items: start;
 }
@@ -305,16 +305,19 @@ body {
 	gap: 16px;
 }
 .current-cover {
+    height: 100%;
+    width: 100%;
 	border-radius: 12px;
 	border: 1px solid #2a2a38;
 	background-image: url("https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1543897827i/43097201.jpg");
 	background-size: cover;
+    
 	background-position: center;
 	box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
 }
 .current-info h3 {
 	margin: 0;
-	font-size: 16px;
+	font-size: 11px;
 	color: var(--muted);
 	letter-spacing: .12em;
 	text-transform: uppercase;
@@ -334,20 +337,21 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+    gap: 20px;
 	padding: 10px 12px;
 	background: #111119;
 	border: 1px solid #242433;
 	border-radius: 12px;
 }
 .pill-label {
-	font-size: 12px;
+	font-size: 10px;
 	letter-spacing: .12em;
 	text-transform: uppercase;
 	color: var(--muted);
 }
 .pill-value {
-	font-size: 14px;
-	font-weight: 700;
+	font-size: 12px;
+	font-weight: 500;
 	color: var(--text);
 }
 .awards-panel {
@@ -629,7 +633,6 @@ body {
 	align-items: start;
 }
 
-/* Recommendations Section */
 .recommendations-section {
 	display: grid;
 	gap: 18px;
@@ -714,7 +717,6 @@ body {
 	border-color: rgba(245,217,124,.4);
 }
 
-/* Top Picks Section */
 .top-picks-section {
 	display: grid;
 	gap: 18px;
@@ -955,7 +957,6 @@ body {
 	transform: translateY(-2px);
 }
 
-/* Responsive */
 @media (max-width: 1400px) {
 	.card-grid { grid-template-columns: repeat(4, 1fr); }
 }
