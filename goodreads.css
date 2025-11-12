@@ -6,8 +6,8 @@
 	--card: #16161a;
 	--card-2: #1b1b21;
 	--stroke: #25252d;
-	--neon: #f5d97c; /* warm gold */
-	--neon-2: #f0a94a; /* amber */
+	--neon: #f5d97c; 
+	--neon-2: #f0a94a; 
 	--shadow: 0 10px 30px rgba(0,0,0,.45);
 }
 
@@ -78,7 +78,7 @@ body {
 	pointer-events: none;
 }
 
-/* Sidebar */
+
 .sidebar {
 	position: relative;
 	background: linear-gradient(180deg, #0d0d11 0%, #0b0b0f 100%);
@@ -162,7 +162,6 @@ body {
 	transition: grid-template-columns .25s ease;
 }
 
-/* Main */
 .main {
 	padding: 18px 22px 26px;
 }
@@ -472,7 +471,8 @@ body {
 	box-shadow: var(--shadow);
 	transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 	cursor: pointer;
-	overflow: hidden;
+	overflow: visible;
+	
 }
 .book-card:hover {
 	transform: translateY(-8px) scale(1.02);
@@ -507,7 +507,7 @@ body {
 	background-image: url("https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1700522826i/41865.jpg");
 }
 .cover-6 {
-	background-image: url("https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1700522826i/41865.jpg");
+	background-image: url("https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1597695864i/54493401.jpg");
 }
 .book-title {
 	margin: 10px 0 8px;
@@ -575,7 +575,7 @@ body {
 	box-shadow: 0 12px 32px rgba(0,0,0,.55);
 	display: none;
 	z-index: 10;
-	overflow: hidden;
+	overflow: visible;
 }
 .status-dropdown.show {
 	display: grid;
